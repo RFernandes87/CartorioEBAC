@@ -8,6 +8,19 @@ int portugues(){ // Função que altera o idioma para incluir caracteres PT-BR
 	setlocale(LC_ALL, "Portuguese");
 }
 
+int voltaMenu(){ // Função que paralisa o programa por um momento para que o usuario possa ler a mensagem e em seguida uma mensagem voltando ao menu aparece e se encerra automaticamente
+	Sleep(900); // Para o programa por 0.9s
+	system("cls"); // Apaga a tela 
+	printf("Voltando ao menu.");
+	Sleep(400);
+	system("cls");
+	printf("Voltando ao menu..");
+	Sleep(400);
+	system("cls");
+	printf("Voltando ao menu...");
+	Sleep(400);
+	system("cls");
+}
 
 int cache(){ // Função necessaria para apagar o cache que fica nas variaveis quando vai realizar a mesma função seguidamente. Caso não use, o programa buga e insere variaveis automaticamente
 	fflush(stdin);
@@ -65,6 +78,7 @@ int registraNomes(){ // Função que cria o cadastro de cada usuario em um arquivo
 	cache();
 	
 	printf("Usuário cadastrado com sucesso!!");
+	voltaMenu();
 	
 }
 
@@ -91,6 +105,7 @@ int consultaNomes(){ // Função que faz a consulta de algum nome no sistema pelo 
 	}
 	fclose(file);
 	cache();
+	voltaMenu();
 	
 }
 
@@ -113,6 +128,7 @@ int deletaNomes(){ // Função que deleta usuarios a partir do CPF
 	remove(cpf);
 	printf("Usuário removido do sistema...\n\n");
 	cache();
+	voltaMenu();
 	
 	}
 	
@@ -121,6 +137,8 @@ int deletaNomes(){ // Função que deleta usuarios a partir do CPF
 int main(){ // Programa principal
 	portugues();
 	int opcao = 99;
+		
+	while (opcao!=0){
 		
 	
 		printf("\n\t ###  Cartório da EBAC  ###\n\n");
@@ -151,6 +169,7 @@ int main(){ // Programa principal
 		default:
 			printf("\n\tOpção Incorreta.. Tente novamente!\n\n");
  		}
+ 	}
 	
 
 	printf("\n\n\n--------------------------------\n");
