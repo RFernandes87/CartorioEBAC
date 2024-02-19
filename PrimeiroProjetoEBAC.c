@@ -137,8 +137,16 @@ int deletaNomes(){ // Função que deleta usuarios a partir do CPF
 int main(){ // Programa principal
 	portugues();
 	int opcao = 99;
+	char senhadigitada[10]="a";
+	
+	printf("\n\t ###  Cartório da EBAC  ###\n\n");
+	printf("Login de administrador!\n\n\tDigite a senha: ");
+	scanf("%s", senhadigitada);
+	
+	
+	if(senhadigitada[10] == "admin"){
 		
-	while (opcao!=0){
+		while (opcao!=0){
 		
 	
 		printf("\n\t ###  Cartório da EBAC  ###\n\n");
@@ -169,7 +177,13 @@ int main(){ // Programa principal
 		default:
 			printf("\n\tOpção Incorreta.. Tente novamente!\n\n");
  		}
- 	}
+ 	  }		
+	}
+	
+	else 
+		printf("---- Senha incorreta ----");
+		
+
 	
 
 	printf("\n\n\n--------------------------------\n");
