@@ -138,13 +138,15 @@ int main(){ // Programa principal
 	portugues();
 	int opcao = 99;
 	char senhadigitada[10]="a";
+	int comparacao;
 	
 	printf("\n\t ###  Cartório da EBAC  ###\n\n");
 	printf("Login de administrador!\n\n\tDigite a senha: ");
 	scanf("%s", senhadigitada);
 	
+	comparacao = strcmp(senhadigitada, "admin");
 	
-	if(senhadigitada[10] == "admin"){
+	if(comparacao == 0){
 		
 		while (opcao!=0){
 		
